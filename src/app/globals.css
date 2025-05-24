@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+:root {
+  --bg-color: #111826;
+  --text-color: rgb(221, 221, 221);
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+input, textarea, select {
+  border: none;
+  outline: none;
+}
