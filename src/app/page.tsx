@@ -3,6 +3,9 @@ import connectDB from "@/libs/connectDB";
 import Task, { TaskDocumentType } from "@/model/task";
 import Link from "next/link";
 
+export const dynamic = "force-dynamic"
+// export const revalidate = 10; // update page every 10 sec
+
 export default async function HomePage() {
   await connectDB();
   const tasks: TaskDocumentType[] = await Task.find().sort({createdAt: -1});

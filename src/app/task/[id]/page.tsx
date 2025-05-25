@@ -1,6 +1,7 @@
 import StatusBadge from "@/components/StatusBadge";
 import connectDB from "@/libs/connectDB";
 import Task, { TaskDocumentType } from "@/model/task";
+import { deleteTask } from "@/utils/actions";
 import dayjs from "dayjs";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -31,10 +32,11 @@ export default async function TaskDetailsPage({
           >
             Edit
           </Link>
-          <form>
+          <form action={deleteTask}>
+            <input type="hidden" name="taskId" value={task?._id?.toString()} />
             <button
               type="submit"
-              className="px-2 py-1 rounded-lg text-white text-xl bg-red-700 hover:bg-red-600 transition"
+              className="cursor-pointer px-2 py-1 rounded-lg text-white text-xl bg-red-700 hover:bg-red-600 transition"
             >
               Delete
             </button>
