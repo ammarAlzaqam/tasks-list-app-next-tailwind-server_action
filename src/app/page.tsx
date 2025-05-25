@@ -47,7 +47,7 @@ export default async function HomePage() {
               <td><StatusBadge status={t.status}/></td>
               <td>
                 <Link
-                  href=""
+                  href={`/task/${t._id}`}
                   className="p-2 bg-blue-600 hover:bg-blue-800 transition rounded-md"
                 >
                   details
